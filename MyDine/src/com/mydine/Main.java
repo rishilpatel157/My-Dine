@@ -1,7 +1,10 @@
 package com.mydine;
 
+<<<<<<< HEAD
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+=======
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 import java.text.DateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -9,16 +12,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+<<<<<<< HEAD
 import com.mydine.entities.CustomerData;
+=======
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 import com.mydine.entities.Customers;
 import com.mydine.entities.Menu;
 import com.mydine.entities.ResOwners;
 import com.mydine.entities.Restaurants;
+<<<<<<< HEAD
 import com.mydine.exceptions.DuplicateDataException;
 import com.mydine.exceptions.InvalidDetailException;
 import com.mydine.exceptions.RestuarantException;
 import com.mydine.servie.CustomerService;
 import com.mydine.servie.CustomerServiceImp;
+=======
+import com.mydine.exceptions.InvalidDetailException;
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 import com.mydine.servie.RestaurantService;
 import com.mydine.servie.RestaurantServiceImp;
 import com.mydine.utility.FileExists;
@@ -28,13 +38,19 @@ public class Main {
 
 	
 	
+<<<<<<< HEAD
           private static void adminFunctionality(Scanner sc , Map<Integer,Restaurants> restaurants) throws InvalidDetailException {
 	 
         	  try {
+=======
+          private static void adminFunctionality(Scanner sc , Map<Integer,Restaurants> resturants) throws InvalidDetailException {
+	 
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 	       adminLogin(sc);
 	       RestaurantService resService = new RestaurantServiceImp(); 
 	     
 	       int choice = 0;
+<<<<<<< HEAD
 	     do {
             	 
             try {
@@ -81,18 +97,58 @@ public class Main {
     	   String resName = sc.nextLine();
     	   System.out.println("Enter Restaurant Owner User Name");
     	   String resOwner = sc.nextLine();
+=======
+	     
+	       try {
+            do {
+        	  
+        	  System.out.println("'1' ---> View All Restuarants.");
+        	  System.out.println("'2' ---> Add Restaurants");
+        	  choice = sc.nextInt();
+        	 switch (choice) {
+			case 1:
+			       
+				resService.viewAllRestarants(resturants);
+				break;
+			case 2:
+				addRestaurants(resturants, resService);	 
+			       break;
+        	 }
+        	  
+          }while(choice!=0);
+          
+	    	 
+	    	 
+	    	 
+		} catch (Exception e) {
+			// TODO: handle exception
+ 		}
+      }
+          
+       public static void addRestaurants(Map<Integer, Restaurants > restaurants,RestaurantService resService){
+        Scanner sc = new Scanner(System.in);
+    	   
+    	   System.out.println("Enter Restaurants Details");
+    	   System.out.println("Enter Restaurant Name");
+    	   String resName = sc.nextLine();
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
     	   System.out.println("Enter Restuarant Address");
     	   String resAddress = sc.nextLine();
     	   System.out.println("Enter Cuisine of your Restaurant");
     	   String resCuisine = sc.nextLine();
     	   System.out.println("Enter Restaurant Opening Time");
     	   String resOpenTime = sc.next();
+<<<<<<< HEAD
     	   LocalTime openTime = LocalTime.parse(resOpenTime,format);
     	   System.out.println("Enter Restaurant Closing Time");
     	   String resCloseTime = sc.next();
     	   LocalTime closeTime = LocalTime.parse(resCloseTime,format);
     	   
    	    
+=======
+    	   System.out.println("Enter Restaurant Closing Time");
+    	   String resCloseTime = sc.next();
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
     	   System.out.println("Enter number of items do you want to add in your MENU");
     	   int menuNum = sc.nextInt();
     	    Map<Integer,Menu> map = new HashMap<>();
@@ -112,6 +168,7 @@ public class Main {
                 }
     	   
     	   
+<<<<<<< HEAD
     	  
     	   
     	   
@@ -316,6 +373,21 @@ public class Main {
       
       
       
+=======
+    	   
+    	    DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm");
+    	    LocalTime openTime = LocalTime.parse(resOpenTime,format);
+    	    LocalTime closeTime = LocalTime.parse(resCloseTime,format);
+    	    
+    	   
+    	   
+    	   Restaurants  restaurant1 = new Restaurants(IdGeneration.generateId(), resName, resAddress, resCuisine, openTime, closeTime, menuNum, map);
+    	         resService.addRestaraunts(restaurant1, restaurants);    	   
+    	 
+          }
+ 
+ 
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
  public static void adminLogin(Scanner sc) throws InvalidDetailException{
 	 
 	 System.out.println("Please enter your user name");
@@ -330,6 +402,7 @@ public class Main {
 	 {
 		 throw new InvalidDetailException("Invalid Admin Credentails");
 	 }
+<<<<<<< HEAD
  }
  
  
@@ -448,21 +521,49 @@ public class Main {
     	   
        }
 	 
+=======
+	 
+	 
+	 
+	 
+ }
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 	
 	public static void main(String[] args) {
 		
 		Map<Integer, Restaurants> restaurants = FileExists.restaurantFile();
         Map< String ,ResOwners>	resOwners = FileExists.resOwners();
         Map<String , Customers > customers = FileExists.customerFile();
+<<<<<<< HEAD
         
         
         
+=======
+		
+        
+        
+        System.out.println(restaurants);
+        for (Map.Entry<Integer, Restaurants> entry : restaurants.entrySet()) {
+            int key = entry.getKey();
+            Restaurants restaurant = entry.getValue();
+            System.out.println("Key: " + key);
+            System.out.println("Restaurant: " + restaurant);
+            // Print other specific properties of the Restaurants object if needed
+            // For example: System.out.println("Name: " + restaurant.getName());
+            //              System.out.println("Address: " + restaurant.getAddress());
+            System.out.println("-------------------------");
+        }
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 
 		
 		
 		Scanner sc = new Scanner(System.in);
 	
 		System.out.println("Welcome, in MyDine Resturant.");
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 		try {
 			
 			int choice = 0;
@@ -472,6 +573,7 @@ public class Main {
 				System.out.println("Please enter your Prefernce.");
 				System.out.println("'1' ---> Admin Login.");
 				System.out.println("'2' ---> Resturantant Owner.");
+<<<<<<< HEAD
 				System.out.println("'3' ---> Customer Login & Signup.");
 				System.out.println("'0' ---> for exit.");
 						choice = sc.nextInt();
@@ -487,6 +589,23 @@ public class Main {
 				case 3:
 					custemerFunctionality( restaurants,  customers);
 					break;
+=======
+				System.out.println("'3' ---> Customer Login.");
+				System.out.println("'4' ---> Customer Signup.");
+				System.out.println("'0' ---> for exit.");
+						choice = sc.nextInt();
+				switch (choice) {
+				
+				case 1: {
+					
+					adminFunctionality(sc , restaurants);
+					
+					
+					
+				}
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + choice);
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 				}		
 						
 			}while(choice!=0);
@@ -496,6 +615,7 @@ public class Main {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
+<<<<<<< HEAD
 		}finally {
 			
 			try {
@@ -512,6 +632,8 @@ public class Main {
 			}
 			
 			
+=======
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 		}
 		
 	}

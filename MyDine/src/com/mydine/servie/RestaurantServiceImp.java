@@ -4,7 +4,10 @@ import java.lang.module.ResolutionException;
 import java.util.Map;
 
 import com.mydine.entities.Restaurants;
+<<<<<<< HEAD
 import com.mydine.exceptions.RestuarantException;
+=======
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 
 public class RestaurantServiceImp implements RestaurantService{
 
@@ -13,11 +16,16 @@ public class RestaurantServiceImp implements RestaurantService{
 
 		Integer id = (int) res.getId();
 		restaurants.put(id, res);
+<<<<<<< HEAD
+=======
+		System.out.println(restaurants.values());
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 		
 		return " Restaurant added Successfully";
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void viewAllRestarants( Map<Integer, Restaurants> restaurants) throws RestuarantException {
 	
 		   if(restaurants!=null && restaurants.size()>0)
@@ -25,11 +33,21 @@ public class RestaurantServiceImp implements RestaurantService{
 			   for(Map.Entry<Integer, Restaurants> entry  : restaurants.entrySet())
 			   {
 				   
+=======
+	public void viewAllRestarants( Map<Integer, Restaurants> restaurants) {
+	
+		
+		   if(restaurants.size()>0)
+		   {
+			   for(Map.Entry<Integer, Restaurants> entry  : restaurants.entrySet())
+			   {
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 				   System.out.println(entry.getValue());
 			   }
 		   }
 		   else
 		   {
+<<<<<<< HEAD
 			   throw new RestuarantException("Restaurant List is Empty");
 		   }
 	
@@ -65,6 +83,12 @@ public class RestaurantServiceImp implements RestaurantService{
     		return "SucessFull Updated";
     	
 	}
+=======
+			   throw new ResolutionException("Restaurant List is Empty");
+		   }
+	
+	}
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 	
 
 }

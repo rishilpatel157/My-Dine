@@ -1,5 +1,6 @@
 package com.mydine.entities;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 
 public class Customers extends CustomerData implements Serializable{
@@ -13,5 +14,8 @@ public class Customers extends CustomerData implements Serializable{
 
 
 	
+=======
+public class Customers {
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 
 }

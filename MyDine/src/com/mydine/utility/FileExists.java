@@ -5,11 +5,17 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.mydine.entities.CustomerData;
+=======
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 import com.mydine.entities.Customers;
 import com.mydine.entities.ResOwners;
 import com.mydine.entities.Restaurants;
@@ -51,7 +57,10 @@ public class FileExists {
 		}
 		return rFile;
 		
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 		
 	}
 	
@@ -67,6 +76,7 @@ public class FileExists {
 	public static Map<String,Customers> customerFile(){
 		
 		Map<String,Customers> cusFile = null;
+<<<<<<< HEAD
            
 		 File f = new File("Customers.ser");
 		 boolean flag = false;
@@ -99,5 +109,10 @@ public class FileExists {
 		return cusFile;
 	}
 
+=======
+		
+		return cusFile;
+	}
+>>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 	
 }
