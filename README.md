@@ -17,9 +17,7 @@ MyDine is an online food ordering system inspired by the successful real-world a
    ```bash
    git clone https://github.com/rishilpatel157/energized-secretary-1272.git
 
-# MyDine - Your Personal Food Ordering Portal
 
-MyDine is an online food ordering system inspired by the successful real-world application, Swiggy. The goal is to simplify the food ordering process, providing a platform where customers can browse various restaurants, view menus, place orders, and track their deliveries in real-time.
 
 ## Features
 
