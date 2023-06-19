@@ -3,34 +3,18 @@ package com.mydine.entities;
 import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.Map;
-<<<<<<< HEAD
 import java.util.Objects;
 
 public class Restaurants implements Serializable{
  
 	private int id;
 	private  String restaurantName;
-=======
-
-public class Restaurants implements Serializable{
- 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private int id;
-	private  String resturantName;
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 	private String address;
 	private String cuisineType;
 	private LocalTime openTime;
 	private LocalTime closeTime;
 	private int menuItemNo;
-<<<<<<< HEAD
 	private String resOwnerUserName;
-=======
-	
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 	private Map<Integer,Menu> menu;
 	
 	
@@ -41,20 +25,12 @@ public class Restaurants implements Serializable{
 
 
 
-<<<<<<< HEAD
 	public Restaurants(int id, String restaurantName,String resOwnerUserName, String address, String cuisineType, LocalTime openTime,
 			LocalTime closeTime, int menuItemNo, Map<Integer, Menu> menu) {
 		super();
 		this.id = id;
 		this.resOwnerUserName = resOwnerUserName;
 		this.restaurantName = restaurantName;
-=======
-	public Restaurants(int id, String resturantName, String address, String cuisineType, LocalTime openTime,
-			LocalTime closeTime, int menuItemNo, Map<Integer, Menu> menu) {
-		super();
-		this.id = id;
-		this.resturantName = resturantName;
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 		this.address = address;
 		this.cuisineType = cuisineType;
 		this.openTime = openTime;
@@ -65,7 +41,6 @@ public class Restaurants implements Serializable{
 
 
 
-<<<<<<< HEAD
 	public String getResOwnerUserName() {
 		return resOwnerUserName;
 	}
@@ -80,20 +55,12 @@ public class Restaurants implements Serializable{
 
 	public String getResturantName() {
 		return restaurantName;
-=======
-	public String getResturantName() {
-		return resturantName;
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 	}
 
 
 
 	public void setResturantName(String resturantName) {
-<<<<<<< HEAD
 		this.restaurantName = resturantName;
-=======
-		this.resturantName = resturantName;
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 	}
 
 
@@ -182,7 +149,6 @@ public class Restaurants implements Serializable{
 	
 	@Override
 	public String toString() {
-<<<<<<< HEAD
 		
 	    StringBuilder sb = new StringBuilder();
 	    sb.append("Restaurant ID: ").append(id).append("\n");
@@ -208,14 +174,6 @@ public class Restaurants implements Serializable{
 		
 	
 
-=======
-	
-		String str = " Resturant id = "+id+ " menu"+menu+"";
-		
-		
-		return str;
-	}
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 
 
 	

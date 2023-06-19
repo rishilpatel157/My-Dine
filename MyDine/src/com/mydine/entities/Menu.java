@@ -1,6 +1,8 @@
 package com.mydine.entities;
 
-public class Menu {
+import java.io.Serializable;
+
+public class Menu implements Serializable {
 
 	private String item;
 	private int cost;

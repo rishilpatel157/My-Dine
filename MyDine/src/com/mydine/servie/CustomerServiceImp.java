@@ -1,12 +1,13 @@
 package com.mydine.servie;
 
+import java.io.Serializable;
 import java.util.Map;
 
 import com.mydine.entities.Customers;
 import com.mydine.exceptions.DuplicateDataException;
 import com.mydine.exceptions.InvalidDetailException;
 
-public class CustomerServiceImp implements CustomerService{
+public class CustomerServiceImp implements CustomerService,Serializable{
 
 	@Override
 	public void signup(Customers cust, Map<String, Customers> cusFile) throws DuplicateDataException {

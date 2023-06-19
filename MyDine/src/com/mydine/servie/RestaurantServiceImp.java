@@ -1,31 +1,24 @@
 package com.mydine.servie;
 
-import java.lang.module.ResolutionException;
+import java.io.Serializable;
 import java.util.Map;
 
+import com.mydine.entities.Menu;
 import com.mydine.entities.Restaurants;
-<<<<<<< HEAD
 import com.mydine.exceptions.RestuarantException;
-=======
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 
-public class RestaurantServiceImp implements RestaurantService{
+public class RestaurantServiceImp implements RestaurantService,Serializable{
 
 	@Override
 	public String addRestaraunts(Restaurants res, Map<Integer, Restaurants> restaurants) {
 
 		Integer id = (int) res.getId();
 		restaurants.put(id, res);
-<<<<<<< HEAD
-=======
-		System.out.println(restaurants.values());
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 		
 		return " Restaurant added Successfully";
 	}
 
 	@Override
-<<<<<<< HEAD
 	public void viewAllRestarants( Map<Integer, Restaurants> restaurants) throws RestuarantException {
 	
 		   if(restaurants!=null && restaurants.size()>0)
@@ -33,21 +26,11 @@ public class RestaurantServiceImp implements RestaurantService{
 			   for(Map.Entry<Integer, Restaurants> entry  : restaurants.entrySet())
 			   {
 				   
-=======
-	public void viewAllRestarants( Map<Integer, Restaurants> restaurants) {
-	
-		
-		   if(restaurants.size()>0)
-		   {
-			   for(Map.Entry<Integer, Restaurants> entry  : restaurants.entrySet())
-			   {
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 				   System.out.println(entry.getValue());
 			   }
 		   }
 		   else
 		   {
-<<<<<<< HEAD
 			   throw new RestuarantException("Restaurant List is Empty");
 		   }
 	
@@ -74,7 +57,6 @@ public class RestaurantServiceImp implements RestaurantService{
 
 	@Override
 	public String updateRestaurant(Integer id,Restaurants restaurant, Map<Integer, Restaurants> resFile) throws RestuarantException {
-		// TODO Auto-generated method stub
 		
 			
     		resFile.put(id,restaurant);
@@ -83,12 +65,30 @@ public class RestaurantServiceImp implements RestaurantService{
     		return "SucessFull Updated";
     	
 	}
-=======
-			   throw new ResolutionException("Restaurant List is Empty");
-		   }
+
+	@Override
+	public void viewSelectedRes(int id, Map<Integer, Restaurants> resFile) {
 	
+	     System.out.println(resFile.get(id));
+		
 	}
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
+
+	@Override
+	public void viewMenu(int key, Map<Integer, Restaurants> resFile) {
+		
+//		System.out.println(resFile.get(key).getMenu().keySet());
+		  Map<Integer,Menu> menu  = resFile.get(key).getMenu();
+		StringBuilder sb = new StringBuilder();
+		
+		 for (Map.Entry<Integer, Menu> entry : menu.entrySet()) {
+		        int menuItemId = entry.getKey();
+		        Menu menuItem = entry.getValue();
+		        sb.append("Menu id : "+menuItemId).append(" - ");
+		        sb.append(menuItem.getItem()+" Rs : "+menuItem.getCost()).append("\n");
+		    }
+		 System.out.println(sb.toString());
+		
+	}
 	
 
 }

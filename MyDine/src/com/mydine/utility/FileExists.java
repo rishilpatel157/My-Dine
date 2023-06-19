@@ -1,24 +1,25 @@
 package com.mydine.utility;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.mydine.entities.CustCart;
 import com.mydine.entities.CustomerData;
-=======
-import java.util.LinkedHashMap;
-import java.util.Map;
-
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 import com.mydine.entities.Customers;
 import com.mydine.entities.ResOwners;
 import com.mydine.entities.Restaurants;
+import com.mydine.entities.Transactions;
 
 public class FileExists {
 
@@ -57,10 +58,7 @@ public class FileExists {
 		}
 		return rFile;
 		
-<<<<<<< HEAD
 
-=======
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
 		
 	}
 	
@@ -76,7 +74,6 @@ public class FileExists {
 	public static Map<String,Customers> customerFile(){
 		
 		Map<String,Customers> cusFile = null;
-<<<<<<< HEAD
            
 		 File f = new File("Customers.ser");
 		 boolean flag = false;
@@ -109,10 +106,111 @@ public class FileExists {
 		return cusFile;
 	}
 
-=======
+public static Map<String ,CustCart> custCartFile(){
+	
+	Map<String,CustCart> custCartFile = null;
+    
+	 File f = new File("CustomersCart1.ser");
+	 boolean flag = false;
+	 try {
 		
-		return cusFile;
+		 if(!f.exists())
+		 {
+			 f.createNewFile();
+			 flag = true;
+		 }
+		 
+		if(flag) {
+			 custCartFile = new LinkedHashMap<>();
+			 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
+			 oos.writeObject(custCartFile);
+			 return custCartFile;
+		 }
+		 else
+		 {
+			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+			 custCartFile = (Map<String,CustCart>)ois.readObject();
+			 return custCartFile;
+		 }
+		 
+		 
+		 
+		 
+	} catch (Exception e) {
+		// TODO: handle exception
+		System.out.println(e.getLocalizedMessage());
 	}
->>>>>>> 7203012ba1e02513b4c15bacad2c70b69e7b0a8b
+	
+	
+	return custCartFile;
+	
+	
+}
+
+
+         public static Map<String,Transactions>  transactionFile(){
+        	 
+        	 Map<String,Transactions> TransactionFile = null;
+        	    
+        	 File f = new File("Transactions.ser");
+        	 boolean flag = false;
+        	 try {
+        		
+        		 if(!f.exists())
+        		 {
+        			 f.createNewFile();
+        			 flag = true;
+        		 }
+        		 
+        		if(flag) {
+        			TransactionFile = new LinkedHashMap<>();
+        			 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
+        			 oos.writeObject(TransactionFile);
+        			 return TransactionFile;
+        		 }
+        		 else
+        		 {
+        			 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+        			 TransactionFile = (Map<String,Transactions>)ois.readObject();
+        			 return TransactionFile;
+        		 }
+        		 
+        		 
+        		 
+        		 
+        	} catch (Exception e) {
+        		// TODO: handle exception
+        		System.out.println(e.getLocalizedMessage());
+        	}
+        	
+        	
+        	return TransactionFile;
+        	 
+         }
+//
+//public static void writeToFile(String filePath, String content) {
+//    try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+//        writer.write(content);
+//        System.out.println("File written successfully.");
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    }
+//}
+//
+//
+//public static String readFromFile(String filePath) {
+//    StringBuilder content = new StringBuilder();
+//
+//    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+//        String line;
+//        while ((line = reader.readLine()) != null) {
+//            content.append(line).append("\n");
+//        }
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    }
+//
+//    return content.toString();
+//}
 	
 }
