@@ -23,7 +23,7 @@ MyDine is an online food ordering system inspired by the successful real-world a
 
 - **User Roles**:
   - Administrator: Can manage the platform, add and update restaurants, view orders, and filter orders based on specific criteria.
-  - Restaurant Owner: Can manage their restaurant's information, update menus, view orders from their restaurant, and update order status.
+  - Administrator: Can manage their restaurant's information, update menus, view orders from their restaurant, and update order status.
   - Customer: Can view available restaurants, browse menus, place orders, track deliveries in real-time, view order history, and manage personal details.
 
 
