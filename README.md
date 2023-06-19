@@ -15,4 +15,4 @@ MyDine is an online food ordering system inspired by the successful real-world a
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/mydine.git](https://github.com/rishilpatel157/energized-secretary-1272.git)https://github.com/rishilpatel157/energized-secretary-1272.git
+   git clone https://github.com/rishilpatel157/energized-secretary-1272.git
