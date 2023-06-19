@@ -28,10 +28,6 @@ MyDine is an online food ordering system inspired by the successful real-world a
   - Restaurant Owner: Can manage their restaurant's information, update menus, view orders from their restaurant, and update order status.
   - Customer: Can view available restaurants, browse menus, place orders, track deliveries in real-time, view order history, and manage personal details.
 
-- **Restaurant Management**:
-  - Add restaurants to the platform with details such as restaurant name, address, cuisine type, opening and closing times.
-  - Update restaurant details, including name, cuisine type, and menu items.
-  - Remove restaurants from the system when they cease cooperation.
 
 - **Order Placement and Management**:
   - Customers can browse menus of available restaurants and select items to add to their order.
