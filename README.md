@@ -1,4 +1,4 @@
-# energized-secretary-1272
+
 # MyDine - Your Personal Food Ordering Portal
 
 ## Description
